@@ -1,0 +1,68 @@
+{% extends 'app/index.html' %}
+{% block content %}
+{% load static %}
+<div class="row pt-4">
+    <div class="col-lg-8 col-md-8 col-12">
+        <section>
+            <h1 class="px-3 text-center">About Us</h1>
+            <hr>
+            <p class="container-fluid">About eToken <b>eToken</b> – Nepal’s first online token booking gateway is a
+                comprehensive online token's booking solution. With
+                eToken digital, customers can book many hospitals and banks token using their mobile phone and the
+                Internet instantly. We have been in operation since 2020 and have been licensed by Goverment of Nepal
+                I.T
+                department as a Service Provider. <br>
+                <br>
+                Our customers can use eToken web application for booking online token's of their respective Banks or
+                Hospitals that saves their precious time of standing in a long queue for that purpose which can be done
+                in the click of a button by using our services and also it's main purpose is to reduce the crowd
+                gathering around such places following the recent crisis of the Covid-19 pandemic with which the whole world
+                has been struggling to cope up. <br>
+                <br>
+                Moving with the mission of leading the online token booking industry with a secured, integrated and
+                comprehensive processing service, we carry a vision of Digital 2025 and hope to enable digital
+                transactions for 30% of all Nepalese day to day life by 2025 A.D. <br>
+                <br>
+                eToken App is available for both iOS and Android devices and its primary web portal is
+                www.etoken.com.np <br>
+            </p>
+        </section>
+
+        <section class="bg-light">
+            <article class="pt-3 pb-4 text-center">
+                <div class="text-black">
+                    <h3 class="display-4">+977 01-543210</h3>
+                    <p>We are here to help and answer any question you might have.</p>
+                    <button class="btn btn-info">Contact Now</button>
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="container px-5 pb-4 col-lg-4 col-md-4 col-12">
+        <h1>Get in Touch</h1>
+        <hr>
+        <p>"If you have any queries or concerns, please do not hesitate to contact us."</p>
+        <form action="about">
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="usr" name="username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Adress:</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" class="form-control" id="subject" name="subject">
+            </div>
+            <div class="form-group">
+                <label for="comment">Message:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

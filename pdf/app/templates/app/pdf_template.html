@@ -1,0 +1,59 @@
+<head>
+    <style>
+        @page {
+            size: a4 portrait;
+            @frame header_frame {           /* Static Frame */
+                -pdf-frame-content: header_content;
+                left: 50pt; width: 512pt; top: 50pt; height: 40pt;
+            }
+            @frame content_frame {          /* Content Frame */
+                left: 50pt; width: 512pt; top: 90pt; height: 632pt;
+            }
+            @frame footer_frame {           /* Another static Frame */
+                -pdf-frame-content: footer_content;
+                left: 50pt; width: 512pt; top: 772pt; height: 20pt;
+            }
+        }
+    </style>
+    </head>
+    
+    <body>
+        <!-- Content for Static Frame 'header_frame' -->
+        <div id="header_content">
+            <h>e-Token NO:{{num}}</h>
+            
+        </div>
+    
+        <!-- Content for Static Frame 'footer_frame' -->
+        <div id="footer_content">(c) - page <pdf:pagenumber>
+            of <pdf:pagecount>
+        </div>
+    
+        <!-- HTML Content -->
+        <table>
+                <tr>
+                    <td>State-3,</td>
+                    <td>01556644</td>
+                </tr>
+                <tr>
+                    <td>Kathmandu,</td>
+                    <td>etoken@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Nepal</td>
+                    <td>etoken.com</td>
+                </tr>
+        </table>
+        <hr>
+        
+    <p>Patient Detail</p>
+      <p><strong>Name:{{company}}</strong></p>
+      <p><strong>Email:{{email}}</strong></p>
+      <p><strong>Mobile:{{phone}}</strong></p>
+      <p><strong>Time:{{time}}</strong></p>
+      <p><strong>Hospital Name:{{hospital}}</strong></p>
+      <p><strong>Doctor Name:{{doctor}}</strong></p>
+   <hr>
+        <p>Note:Attend in time</p>
+    </body>
+    </html>

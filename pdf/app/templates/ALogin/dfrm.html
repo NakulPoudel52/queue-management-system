@@ -1,0 +1,73 @@
+{% extends 'ALogin/aindex.html' %}
+{% block content %}
+{% load static %}
+<section>
+    <div class="container">
+        <form action="{% url 'download' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Mobile NO:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" class="form-control" id="cnumber" name="contact" placeholder="Mobile NO">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label"> Name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" class="form-control" id="cnumber" name="name" placeholder="Name">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Done</button>
+              </div>
+            </div>
+          </form>
+    </div>
+</section>
+<hr class="mt-5">
+<section class="bg-dark">
+    <div class="container">
+        <div class="row pt-5 pb-2 text-white">
+            <div class=" pr-2 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3"><i class="fas fa-hospital-symbol"></i> Hospitals</h3>
+                T. U. Teaching Hospital<br>
+                Tilganga Eye Hospital<br>
+                Vayodha Hospitals
+
+            </div>
+            <div class="px-3 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3 "><i class="fas fa-hospital-symbol"></i></h3>
+                CIWEC Hospital Pvt. Ltd.<br>
+                Kathmandu Neuro & General Hospital<br>
+                and many more....
+
+            </div>
+
+            <div class="px-2 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3"><i class="fas fa-university"></i> Banks </h3>
+                Nepal Rastra Bank<br>
+                Nepal Bank Ltd<br>
+                Nabil Bank Ltd<br>
+                Prabhu Bank Ltd<br>
+                and many more....
+
+            </div>
+
+            <div class="pr-2 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3">Company</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate deserunt ducimus ex
+                    excepturi
+                    exercitationem explicabo fugiat ipsa, iste, maxime, modi rerum ut vitae. Aperiam beatae eos ex
+                    illo
+                    nemo.</p>
+
+            </div>
+            <h3 class="ml-auto">See us at <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i
+                    class="fab fa-twitter-square"></i></h3>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

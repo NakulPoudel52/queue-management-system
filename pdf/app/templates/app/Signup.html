@@ -1,0 +1,36 @@
+{% extends 'app/index.html' %}
+{% block content %}
+
+
+<div class="container-fluid mt-3 mb-5 col-lg-6 col-md-6 col-12">
+    <h1>Sign Up</h1>
+    <hr>
+    <form action="/action_page.php">
+        <div class="row">
+            <div class="form-group col">
+                <label for="usr">First Name:</label>
+                <input type="text" class="form-control" placeholder="Enter Firstname" id="usr">
+            </div>
+            <div class="form-group col">
+                <label for="usr">Last Name:</label>
+                <input type="text" class="form-control" placeholder="Enter Lastname" id="usr">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" placeholder="Enter email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" placeholder="Enter Username" id="username">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>
+{% endblock %}

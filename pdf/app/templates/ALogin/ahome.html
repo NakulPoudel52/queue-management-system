@@ -1,0 +1,187 @@
+{% extends 'ALogin/aindex.html' %}
+{% block content %}
+{% load static %}
+<section>
+    <div class="container">
+        <h2 class="mt-5">Welcome to Token Generator.</h2>
+        <p>Nepal’s first online token booking gateway is a comprehensive online token's booking solution. With eToken
+            digital, customers can book many hospitals and banks token using their mobile phone and the Internet
+            instantly. We have been in operation since 2020 and have been licensed by Goverment of Nepal I.T department
+            as a Service Provider <br>
+            Now you can  <b>book online token's</b> of their respective Banks or
+            Hospitals by clicking on the field given below:</p>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i
+                                class="fas fa-hospital-symbol"></i> Hospitals</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="container">
+                       <!-- <b>VAYODHA HOSPITALS PVT. LTD.</b>-->
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                            Hospitals Token
+                        </button>
+                       <!-- <div class="mt-2 panel-body">
+                            <b>Crimson HOSPITALS PVT. LTD.</b>
+                            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Get Token</button>
+                        </div>-->
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Token Form</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{% url 'download' %}" method="POST">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <label for="fullname">Full Name:</label>
+                                                <input type="text" class="form-control" id="fullname" name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cnumber">Contact Number:</label>
+                                                <input type="text" class="form-control" id="cnumber" name="contact">
+                                            </div>
+                                            <div class="col-auto my-1">
+                                                <label class="mr-sm-2" for="inlineFormCustomSelect">Hospitals:</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="hospital">
+                                                    {% for hospital in hospital %}
+                                                    <option value="{{ hospital.id }}">{{ hospital }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="col-auto my-1">
+                                                <label class="mr-sm-2" for="inlineFormCustomSelect">Doctors:</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="doctor">
+                                                    {% for doctor in doctor %}
+                                                    <option value="{{ doctor.id }}">{{ doctor }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            
+                                         
+
+                                            <div class="form-group">
+                                                <label for="email">Email address:</label>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                            </div>
+                                            <div class="row">
+                                                <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                                                <div class="form-check pr-2">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                           id="gridRadios1" value="option1" checked>
+                                                    <label class="form-check-label" for="gridRadios1">
+                                                        Male
+                                                    </label>
+                                                </div>
+                                                <div class="form-check pr-2">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                           id="gridRadios2" value="option2">
+                                                    <label class="form-check-label" for="gridRadios2">
+                                                        Female
+                                                    </label>
+                                                </div>
+                                                <div class="form-check pr-2">
+                                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                                           id="gridRadios2" value="option2">
+                                                    <label class="form-check-label" for="gridRadios2">
+                                                        Others
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <button type="submit" class="btn btn-primary">Generate Token</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i
+                                    class="fas fa-university"></i> Banks</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="mt-2 panel-body">
+                          <!--  <b>Nepal Rastra Bank</b>-->
+                            <button type="submit" class="btn btn-primary"data-toggle="modal" data-target="#myModal">Banks Token</button>
+                        </div>
+                       <!-- <div class="mt-2 panel-body">
+                            <b>Nepal Bank Limited</b>
+                            <button type="submit" class="btn btn-primary">Generate Token</button>
+                        </div>
+                        <div class="mt-2 panel-body">
+                            <b>Nepal Bandijya Bank </b>
+                            <button type="submit" class="btn btn-primary">Generate Token</button>
+                        </div>
+                        <div class="mt-2 panel-body">
+                            <b>Nepal Rastra Bank</b>
+                            <button type="submit" class="btn btn-primary">Generate Token</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="mt-5">
+<section class="bg-dark">
+    <div class="container">
+        <div class="row pt-5 pb-2 text-white">
+            <div class=" pr-2 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3"><i class="fas fa-hospital-symbol"></i> Hospitals</h3>
+                T. U. Teaching Hospital<br>
+                Tilganga Eye Hospital<br>
+                Vayodha Hospitals
+
+            </div>
+            <div class="px-3 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3 "><i class="fas fa-hospital-symbol"></i></h3>
+                CIWEC Hospital Pvt. Ltd.<br>
+                Kathmandu Neuro & General Hospital<br>
+                and many more....
+
+            </div>
+
+            <div class="px-2 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3"><i class="fas fa-university"></i> Banks </h3>
+                Nepal Rastra Bank<br>
+                Nepal Bank Ltd<br>
+                Nabil Bank Ltd<br>
+                Prabhu Bank Ltd<br>
+                and many more....
+
+            </div>
+
+            <div class="pr-2 col-lg-3 col-md-3 col-12">
+                <h3 class="py-3">Company</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate deserunt ducimus ex
+                    excepturi
+                    exercitationem explicabo fugiat ipsa, iste, maxime, modi rerum ut vitae. Aperiam beatae eos ex
+                    illo
+                    nemo.</p>
+
+            </div>
+            <h3 class="ml-auto">See us at <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i
+                    class="fab fa-twitter-square"></i></h3>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
